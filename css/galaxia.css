@@ -1,0 +1,545 @@
+/* ===== PANTALLA DE CARGA GALAXIA ===== */
+.loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.loading-screen.hidden {
+    display: none;
+}
+
+.galaxia-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.galaxia {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FONDO ESTELAR */
+.galaxia::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: galaxia-rotate 30s linear infinite;
+}
+
+.galaxia::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 0, 110, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: galaxia-rotate 40s linear infinite reverse;
+}
+
+@keyframes galaxia-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ESTRELLAS */
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+.star:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.star:nth-child(2) {
+    top: 30%;
+    right: 15%;
+    animation-delay: 0.5s;
+}
+
+.star:nth-child(3) {
+    bottom: 25%;
+    left: 20%;
+    animation-delay: 1s;
+}
+
+.star:nth-child(4) {
+    bottom: 20%;
+    right: 10%;
+    animation-delay: 1.5s;
+}
+
+.star:nth-child(5) {
+    top: 50%;
+    left: 5%;
+    animation-delay: 2s;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* PLANETAS */
+.planets {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    animation: orbit 8s linear infinite;
+}
+
+.planet1 {
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle at 30% 30%, #00ff88, #0088ff);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+    animation: orbit-1 15s linear infinite;
+}
+
+.planet2 {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle at 30% 30%, #ff006e, #ff6700);
+    box-shadow: 0 0 15px rgba(255, 0, 110, 0.6);
+    animation: orbit-2 20s linear infinite;
+}
+
+.planet3 {
+    width: 35px;
+    height: 35px;
+    background: radial-gradient(circle at 30% 30%, #00d4ff, #0066ff);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+    animation: orbit-3 25s linear infinite;
+}
+
+@keyframes orbit-1 {
+    0% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) translateX(120px);
+    }
+    25% {
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, 0%) translateY(120px);
+    }
+    50% {
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%) translateX(-120px);
+    }
+    75% {
+        bottom: 0%;
+        left: 50%;
+        transform: translate(-50%, 0%) translateY(-120px);
+    }
+    100% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) translateX(120px);
+    }
+}
+
+@keyframes orbit-2 {
+    0% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) translateX(160px) rotateZ(0deg);
+    }
+    25% {
+        top: -10%;
+        left: 50%;
+        transform: translate(-50%, 0%) translateY(160px) rotateZ(90deg);
+    }
+    50% {
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%) translateX(-160px) rotateZ(180deg);
+    }
+    75% {
+        bottom: -10%;
+        left: 50%;
+        transform: translate(-50%, 0%) translateY(-160px) rotateZ(270deg);
+    }
+    100% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) translateX(160px) rotateZ(360deg);
+    }
+}
+
+@keyframes orbit-3 {
+    0% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) translateX(200px) rotateZ(45deg);
+    }
+    25% {
+        top: -30%;
+        left: 50%;
+        transform: translate(-50%, 0%) translateY(200px) rotateZ(135deg);
+    }
+    50% {
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%) translateX(-200px) rotateZ(225deg);
+    }
+    75% {
+        bottom: -30%;
+        left: 50%;
+        transform: translate(-50%, 0%) translateY(-200px) rotateZ(315deg);
+    }
+    100% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) translateX(200px) rotateZ(405deg);
+    }
+}
+
+/* LOGO CENTRAL */
+.center-logo {
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-r {
+    font-size: 80px;
+    font-weight: 900;
+    color: var(--primary-color);
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.8),
+                 0 0 60px rgba(0, 212, 255, 0.5);
+    animation: logo-pulse 2s ease-in-out infinite;
+    letter-spacing: 5px;
+}
+
+@keyframes logo-pulse {
+    0%, 100% {
+        transform: scale(1);
+        text-shadow: 0 0 30px rgba(0, 212, 255, 0.8),
+                     0 0 60px rgba(0, 212, 255, 0.5);
+    }
+    50% {
+        transform: scale(1.15);
+        text-shadow: 0 0 40px rgba(0, 212, 255, 1),
+                     0 0 80px rgba(255, 0, 110, 0.6);
+    }
+}
+
+/* TEXTO DE CARGA */
+.loading-text {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: loading-blink 1.5s ease-in-out infinite;
+}
+
+@keyframes loading-blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}
+
+/* ===== PANTALLA DE BIENVENIDA ÉPICA ===== */
+.welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #000000 0%, #0a0e27 50%, #000000 100%);
+    z-index: 9998;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.welcome-screen.hidden {
+    display: none;
+}
+
+.stars-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20% 30%, #fff, rgba(255, 255, 255, 0.2)),
+        radial-gradient(2px 2px at 60% 70%, #fff, rgba(255, 255, 255, 0.2)),
+        radial-gradient(1px 1px at 50% 50%, #fff, rgba(255, 255, 255, 0.2)),
+        radial-gradient(1px 1px at 80% 10%, #fff, rgba(255, 255, 255, 0.2)),
+        radial-gradient(2px 2px at 90% 60%, #fff, rgba(255, 255, 255, 0.2));
+    background-size: 200% 200%;
+    animation: twinkle-stars 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes twinkle-stars {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    animation: welcome-fade-in 1s ease-out;
+}
+
+@keyframes welcome-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.welcome-logo-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    height: 200px;
+}
+
+.logo-epic {
+    font-size: 150px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #00d4ff, #00ff88, #ff006e, #00d4ff);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 60px rgba(0, 212, 255, 0.5);
+    animation: logo-epic-move 7s ease-in-out;
+}
+
+@keyframes logo-epic-move {
+    0% {
+        transform: scale(0) rotate(-180deg);
+        opacity: 0;
+    }
+    20% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-30px) scale(1.1) rotate(10deg);
+    }
+    75% {
+        transform: translateY(0px) scale(1);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.logo-glow {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.4) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: glow-expand 7s ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes glow-expand {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    20% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+}
+
+.logo-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.logo-particles span {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--primary-color);
+    animation: particle-explode 7s ease-out forwards;
+}
+
+.logo-particles span:nth-child(1) {
+    animation-delay: 1.2s;
+    left: 50%;
+    top: 50%;
+}
+
+.logo-particles span:nth-child(2) {
+    animation-delay: 1.4s;
+    left: 50%;
+    top: 50%;
+}
+
+.logo-particles span:nth-child(3) {
+    animation-delay: 1.6s;
+    left: 50%;
+    top: 50%;
+}
+
+.logo-particles span:nth-child(4) {
+    animation-delay: 1.8s;
+    left: 50%;
+    top: 50%;
+}
+
+.logo-particles span:nth-child(5) {
+    animation-delay: 2s;
+    left: 50%;
+    top: 50%;
+}
+
+@keyframes particle-explode {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(calc(-50% + (var(--tx, 100px))), calc(-50% + (var(--ty, 100px)))) scale(0);
+        opacity: 0;
+    }
+}
+
+.welcome-text {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    animation: welcome-text-slide 1.5s ease-out 1.5s both;
+}
+
+@keyframes welcome-text-slide {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.welcome-subtitle {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: welcome-text-slide 1.5s ease-out 2s both;
+}
+
+.btn-continue {
+    margin-top: 40px;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--dark-bg);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+    animation: welcome-button-pop 1s ease-out 2.5s both;
+}
+
+@keyframes welcome-button-pop {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.btn-continue:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
+}
