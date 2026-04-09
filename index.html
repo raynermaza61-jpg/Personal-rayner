@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayner Dashboard - Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/galaxia.css">
+</head>
+<body>
+    <!-- PANTALLA DE LOGIN -->
+    <div id="loginContainer" class="login-container">
+        <div class="login-box">
+            <div class="login-form">
+                <h1 class="login-title">RAYNER DASHBOARD</h1>
+                <p class="login-subtitle">Sistema Personal Privado</p>
+                
+                <form id="loginForm" class="form-login">
+                    <div class="input-group">
+                        <input 
+                            type="password" 
+                            id="passwordInput" 
+                            class="password-input" 
+                            placeholder="Ingresa tu contraseña"
+                            required
+                        >
+                        <span class="eye-icon" onclick="togglePasswordVisibility()">👁️</span>
+                    </div>
+                    
+                    <button type="submit" class="btn-login">ENTRAR</button>
+                </form>
+                
+                <p id="loginError" class="login-error"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PANTALLA DE CARGA (GALAXIA) -->
+    <div id="loadingScreen" class="loading-screen hidden">
+        <div class="galaxia-container">
+            <div class="galaxia">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="planets">
+                    <div class="planet planet1"></div>
+                    <div class="planet planet2"></div>
+                    <div class="planet planet3"></div>
+                </div>
+                <div class="center-logo">
+                    <div class="logo-r">R</div>
+                </div>
+            </div>
+            <p class="loading-text">Preparando tu universo...</p>
+        </div>
+    </div>
+
+    <!-- PANTALLA DE BIENVENIDA ÉPICA -->
+    <div id="welcomeScreen" class="welcome-screen hidden">
+        <div class="stars-background"></div>
+        <div class="particles"></div>
+        
+        <div class="welcome-content">
+            <div class="welcome-logo-container">
+                <div class="logo-epic">R</div>
+                <div class="logo-glow"></div>
+                <div class="logo-particles">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            
+            <h1 class="welcome-text">¡Bienvenido Rayner!</h1>
+            <p class="welcome-subtitle">Tu espacio personal te espera</p>
+            
+            <button id="continueBtn" class="btn-continue">CONTINUAR AL DASHBOARD</button>
+        </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
