@@ -470,4 +470,4 @@ let finances;
  */
 document.addEventListener('DOMContentLoaded', () => {
     finances = new FinancesManager();
-};
+});
