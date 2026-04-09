@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayner Dashboard - Panel Principal</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- ENCABEZADO -->
+        <div class="dashboard-header">
+            <h1 class="dashboard-title neon-glow">Rayner</h1>
+            <p class="dashboard-subtitle">Tu panel de control personal</p>
+        </div>
+
+        <!-- BOTONES PRINCIPALES -->
+        <div class="nav-buttons">
+            <button id="btn-finanzas" class="btn-section">
+                💰 FINANZAS
+            </button>
+            <button id="btn-horario" class="btn-section">
+                📅 HORARIO
+            </button>
+            <button id="btn-notas" class="btn-section">
+                📝 BLOC DE NOTAS
+            </button>
+        </div>
+    </div>
+
+    <!-- BOTÓN DE LOGOUT -->
+    <button class="logout-btn">SALIR</button>
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
