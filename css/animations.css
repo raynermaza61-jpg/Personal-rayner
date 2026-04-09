@@ -1,0 +1,158 @@
+/* ===== ANIMACIONES ÉPICAS ===== */
+
+@keyframes neon-glow {
+    0%, 100% {
+        text-shadow: 0 0 10px var(--primary-color),
+                     0 0 20px var(--primary-color),
+                     0 0 30px var(--secondary-color),
+                     0 0 40px var(--secondary-color);
+    }
+    50% {
+        text-shadow: 0 0 20px var(--primary-color),
+                     0 0 30px var(--primary-color),
+                     0 0 40px var(--secondary-color),
+                     0 0 50px var(--secondary-color),
+                     0 0 60px var(--secondary-color);
+    }
+}
+
+@keyframes pulse-neon {
+    0%, 100% {
+        box-shadow: 0 0 5px var(--primary-color),
+                    0 0 10px var(--primary-color);
+    }
+    50% {
+        box-shadow: 0 0 10px var(--primary-color),
+                    0 0 20px var(--primary-color),
+                    0 0 30px var(--secondary-color);
+    }
+}
+
+@keyframes rotate-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce-epic {
+    0%, 100% {
+        transform: translateY(0) scaleY(1);
+    }
+    50% {
+        transform: translateY(-20px) scaleY(1.1);
+    }
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes float-smooth {
+    0%, 100% {
+        transform: translateY(-10px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(10px) rotate(5deg);
+    }
+}
+
+@keyframes color-shift {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes scale-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes blink-intense {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes slide-left {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-right {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoom-in {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Aplicar animaciones */
+.neon-glow {
+    animation: neon-glow 2s ease-in-out infinite;
+}
+
+.pulse-box {
+    animation: pulse-neon 1.5s ease-in-out infinite;
+}
+
+.rotating {
+    animation: rotate-slow 4s linear infinite;
+}
+
+.bouncing {
+    animation: bounce-epic 1.5s ease-in-out infinite;
+}
+
+.glowing {
+    animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.floating {
+    animation: float-smooth 3s ease-in-out infinite;
+}
+
+.color-changing {
+    animation: color-shift 6s linear infinite;
+}
+
+.scaling {
+    animation: scale-pulse 1.5s ease-in-out infinite;
+}
